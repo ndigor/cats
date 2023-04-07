@@ -25,6 +25,10 @@ a {
   position: sticky;
 }
 
+.overlay{
+  display:none;
+}
+
 .top-panel {
   width: 90%;
   display: flex;
