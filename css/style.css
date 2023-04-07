@@ -191,7 +191,7 @@ a {
 
 /*Стили модального окна "добавление кота"*/
 .create-edit-modal-form {
-  display: none;
+  /*display: none;*/
 }
 
 .active {
