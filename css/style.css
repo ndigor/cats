@@ -25,10 +25,6 @@ a {
   position: sticky;
 }
 
-.overlay{
-  display:none;
-}
-
 .top-panel {
   width: 90%;
   display: flex;
@@ -195,7 +191,7 @@ a {
 
 /*Стили модального окна "добавление кота"*/
 .create-edit-modal-form {
-  /*display: none;*/
+  display: none;
 }
 
 .active {

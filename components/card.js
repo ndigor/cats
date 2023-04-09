@@ -1,19 +1,23 @@
 const generateCard = (cat) => {
-	return `
-        <div class="cat-card">
-        <i class="fa-heart card__like ${cat.favorite ? 'fa-solid' : 'fa-regular'}" data-id='${cat.id}'></i>
-            <div class="cat-card-image" >
-                <img src=${cat.image !== '' ? cat.image : defaultImg} /> 
-            </div>
-            <div class="card_title">Меня зовут: ${cat.name}</div>
-            <div class="card_age">Возраст: ${cat.age} </div>
-            <div class="cat-card-btns">
-                <button class="cat-card-view" value=${cat.id}>Посмотреть</button>
-                <button class="cat-card-update" value=${cat.id}>Изменить</button> 
-                <button class="cat-card-delete" value=${cat.id}>Удалить</button>
-            </div>
-        </div>
-    `;
-};
-
-/* <img src=${cat.image !== '' ? cat.image : '/img/header_cats.jpg'} />  */
+	return `<div class='cat-card'>
+	<div class="cat-card-image">
+	   <img src=${
+	  cat.image !== '' ? cat.image : defaultLink
+	} alt="Картинка котика" /> 
+	</div>
+	  
+	  <p class="cat-name">${cat.name}</p>
+	  <p class="cat-description">${cat.description}</p>
+	  <div class="${cat.favorite ? 'cat-favorite activ' : 'cat-favorite'}">
+		  <img src="./img/heart.svg" alt="Любимчик"/>
+	  </div>
+	  
+	  <div class="cat-rate"></div> 	
+	  <div class="cat-card-btns">
+	  <button class="cat-card-view" value=${cat.id}>Посмотреть</button>
+	  <button class="cat-card-update" value=${cat.id}>Редактировать</button>
+	  <button class="cat-card-delete" value=${cat.id}>Удалить</button>
+	  </div>
+	  </div>`;
+  };
+  

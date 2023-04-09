@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/api.js" defer></script>
-    <script src="/js/index.js" defer></script>
-    <script src="/components/card.js" defer></script>
-    /*<script src="/js/cart_view.js" defer></script>*/
-	<script src="/components/catcardPopup.js" defer></script>
-    <title>Котики кодера ndigor</title>
-</head>
-<body>
-    
-    <header class="header">
-        <div class="wrapper header__container">
-            <div class="header__logo">
-                <img src="./img/header_cats.jpg" alt="logo_cat">
-                <span class="logo__text">Милые котики</span>
-            </div>
-        <button class="add__cat"><i class="fa-regular fa-plus"></i></button>
-        </div>
-    </header>
-    <div id="homepage">
-        <div class="wrapper">
-            <div class="content"></div>
-            <!-- Модальное окно -->
-            <div class="overlay">
-                <div class="create-edit-modal-form">
-                    <button class="close__modal">
-                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor"/>
-                        </svg>
-                    </button>
-                    <form action="" class="modal_form">
-                        <label class="modal__label" for="id" required >Id</label>
-                        <input class="modal__input disabled" name="id"  id='id' placeholder="Id" required />
-                        <label class="modal__label" for="name" required >Имя</label>
-                        <input class="modal__input" name="name" id='name' placeholder="Имя" required />
-                        <label class="modal__label" for="image" required >Изображение</label>
-                        <input class="modal__input" name="image" id='image' placeholder="Ссылка на изображение" />
-                        <label class="modal__label" for="age" required >Возраст</label>
-                        <input class="modal__input" name="age" id='age' type="number" placeholder="Возраст" required />
-                        <label class="modal__label" for="rate" required >Рейтинг</label>
-                        <input class="modal__input" name="rate" id='rate' type="number" placeholder="Рейтинг" required />
-                        <label class="modal__label" for="description" required >Описание</label>
-                        <input class="modal__input" name="description" id="description" placeholder="Описание" required></input>
-                        <fieldset class="fieldset__favorite">
-                            <label class="modal__label" for="favorite" required >Любимчик</label>
-                            <input type="checkbox" name="favorite" id='favorite' value="True">
-                        </fieldset>
-                        <button class="modal__button" type="submit">Ok</button>
-                    </form>
-                </div>
-            </div>
-        <!-- Модальное окно -->
-        </div>
-    </div>
 
-    <footer class="footer">
-        <div class="wrapper">
-            <div class="footer__container">
-                <p class="footer__text">
-                    © February 2023
-                </p>
-                <p class="footer__text">
-                    Сделано в России
-                </p>
-            </div>
-        </div>
-    </footer>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cats gallery</title>
+	<script src="./js/api.js" defer></script>
+	<script src="./js/index.js" defer></script>
+	<script src="./components/card.js" defer></script>
+	<script src="./components/create_card.js" defer></script>
+	<script src="/components/cart_view.js" defer></script>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="top-panel">
+			<div class="logoPanel">
+				<img src="./img/header_cats.jpg" alt="Лого" class="logo">
+				<p>Пространство котиков</p>
+			</div>
+
+			<div class="header-btns">
+				<button class="add-btn" data-tooltip="Добавить"></button>
+				<button class="update-btn" data-tooltip="Обновить"></button>
+
+			</div>
+		</div>
+	</header>
+
+	<main class="main-content">
+		<div id="homepage">
+			<div class="content"></div>
+		</div>
+
+	</main>
+
+	<footer class="footer">
+		<div class="footer-content">
+			<p class="copyright">&#169; Игорь Недякин, Первомайск, 2023</p>
+			<div class="footer-contacts">
+				<ul class="footer-contacts-list">
+					<li class="footer-contacts-list-item">
+						<a href="https://github.com/ndigor">
+							<img src="./img/github.svg" alt="Гитхаб">
+						</a>
+					</li>
+					<li class="footer-contacts-list-item">
+						<a href="https://vk.com/nedyakin90">
+							<img src="./img/vk.svg" alt="Вконтакте">
+						</a>
+					</li>
+					<li class="footer-contacts-list-item">
+						<a href="https://t.me/ndigor" target="_blank" rel="nofollow">
+							<img src="./img/tg.png" alt="Телеграмм">
+						</a>
+					</li>
+					<li class="footer-contacts-list-item">
+						<a href="mailto:igorfok08@yandex.ru">
+							<img src="./img/mail.png" alt="Почта">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 </body>
+
 </html>

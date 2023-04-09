@@ -1,6 +1,6 @@
 const generateCatCardPopup = (cat) => {
 	return `<div class="popup-wrapper-cat-card active">
-        <div class="popup-cat-card">
+        <div class="popup-cat-card active">
         <div class="popup-close-cat-card btn"><i class="fa-solid fa-xmark"></i></div>
         <div class="popup__card">
             <div class="popup__card-info">
