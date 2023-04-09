@@ -2,9 +2,7 @@ const generateCardView = (cat) => {
 	return `<div class='cardView-popup'>
 	<div class="cardView">
 	<div class="cardView-image">
-	   <img src=${
-	  cat.image !== '' ? cat.image : defaultLink
-	} alt="Картинка котика" /> 
+	   <img src=${cat.image !== '' ? cat.image : defaultLink} alt="Картинка котика" /> 
 	</div>
 	  <div class="cardView-content">
 		  <div class="card-name">Имя: ${cat.name}</div>
