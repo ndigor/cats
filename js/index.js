@@ -84,9 +84,9 @@ content.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON') {
       switch (event.target.className) {
         case 'cat-card-view': // обработка нажатия кнопки просмотра
-          //console.log(event.target.value);
+          console.log(event.target.value);
           let catView = getViewCardInLocal(event.target.value);
-          //console.log(catView);
+          console.log(catView);
           const cardViewPopup = generateCardView(catView);
           content.insertAdjacentHTML('afterbegin', cardViewPopup);
           const modalView = document.querySelector('.cardView-popup');
