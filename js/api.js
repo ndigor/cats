@@ -57,7 +57,7 @@ class Api {
 		});
     }
 
-    deleteCat = (id) => {
+    getDeleteCat = (id) => {
         return fetch(`${this.baseUrl}delete/${id}`, {
             method: 'DELETE'
         }).then((res) => {
