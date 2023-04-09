@@ -16,9 +16,7 @@ const refreshCatsAndContent = () => {
     //console.log(res); // вывод в консоль ответа сервера
     store.setItem('cats', JSON.stringify(res)); // пополнение локального хранилища нашими котами
     const cards = JSON.parse(store.getItem('cats')).reduce(
-      (acc, el) => (acc + generateCard(el)),
-      ''
-    ); //генерация карточек в соответствии с ответом сервера и хранилищем
+      (acc, el) => (acc + generateCard(el)),''); //генерация карточек в соответствии с ответом сервера и хранилищем
     content.insertAdjacentHTML('afterbegin', cards); //добавляем карточки в блок content
   });
 };
