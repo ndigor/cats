@@ -13,7 +13,7 @@ const refreshCatsAndContent = () => {
   //функция отрисовки карточек
   content.innerHTML = '';
   api.getAllCats().then((res) => {
-    console.log(res); // вывод в консоль ответа сервера
+    //console.log(res); // вывод в консоль ответа сервера
     store.setItem('cats', JSON.stringify(res)); // пополнение локального хранилища нашими котами
     const cards = JSON.parse(store.getItem('cats')).reduce(
       (acc, el) => (acc + generateCard(el)),
@@ -68,48 +68,37 @@ headerBtns.addEventListener(
               modal.classList.toggle('active'); //делаем модалку неактивной
               forms.reset(); //очистка полей формы
               modal.remove(); //удаляем форму из дом-дерева
-            },
-            { once: true }
-          );
+            });
           modalBtnClose.addEventListener(
             'click',
             (evt) => {
               modal.remove(); //удаляем форму из дом-дерева
-            },
-            { once: true }
-          );
+            });
           break;
         case 'update-btn':
           refreshCatsAndContent();
           break;
       }
     }
-  },
-  { once: true }
-);
+  });
 
-content.addEventListener(
-  'click',
-  (event) => {
+content.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON') {
       switch (event.target.className) {
         case 'cat-card-view': // обработка нажатия кнопки просмотра
-          console.log(event.target.value);
+          //console.log(event.target.value);
           let catView = getViewCardInLocal(event.target.value);
-          console.log(catView);
+          //console.log(catView);
           const cardViewPopup = generateCardView(catView);
           content.insertAdjacentHTML('afterbegin', cardViewPopup);
           const modalView = document.querySelector('.cardView-popup');
 
           const modalViewBtn = modalView.querySelector('button');
-          modalViewBtn.addEventListener(
-            'click',
-            (evt) => {
+          modalViewBtn.addEventListener('click', (evt) => {
               modalView.remove();
-            },
-            { once: true }
-          );
+            });
           break;
+
         case 'cat-card-update': //обработка редактирования
           const createCardForm = createCard(); //при нажатии кнопки происходит отрисовка карточки
           content.insertAdjacentHTML('afterbegin', createCardForm); //добавляем карточку на страницу
@@ -154,21 +143,16 @@ content.addEventListener(
                   });
                   modal.classList.toggle('active'); //делаем модалку неактивной
                   forms.reset(); //очистка полей формы
-                },
-                { once: true }
-              );
-            },
-            { once: true }
-          );
+                });
+            });
 
           modalBtnClose.addEventListener(
             'click',
             (evt) => {
               modal.remove(); //удаляем форму из дом-дерева
-            },
-            { once: true }
-          );
+            });
           break;
+
         case 'cat-card-delete': //обработка нажатия кнопки удаления
           api.getDeleteCat(event.target.value).then((res) => {
             //запрос удаления кота на сервер
@@ -178,9 +162,7 @@ content.addEventListener(
           break;
       }
     }
-  },
-  { once: true }
-);
+  });
 
 const getViewCardInLocal = (id) => {
   // функция получения данных из хранилища
